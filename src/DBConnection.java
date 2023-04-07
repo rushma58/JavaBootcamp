@@ -1,16 +1,13 @@
 import java.sql.*;
 public class DBConnection {
-    public Connection connection;
+    public Connection conn;
 
     DBConnection() throws Exception{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-            connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/studentinfo","root","");
-
-
-
-        } catch (Exception e) {
+            conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/studentinfo","root","");
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
